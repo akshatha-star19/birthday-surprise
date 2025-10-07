@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Akash ✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top left, #1a1a2e, #0d0d1a);
+            color: white;
+            overflow: hidden;
+        }
+
+        .font-fancy {
+            font-family: 'Pacifico', cursive;
+        }
+
+        .scene {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+            transition: opacity 1s ease, transform 1s ease;
+            padding: 2rem;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #r1:checked~.container #intro,
+        #r2:checked~.container #scene1,
+        #r3:checked~.container #scene2,
+        #r4:checked~.container #scene3,
+        #r5:checked~.container #finale {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+            z-index: 50;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            /* Full viewport width */
+            height: 100vh;
+            /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 1.5rem;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            width: 95vw;
+            /* Almost full width */
+            max-width: 1200px;
+            /* Prevent too wide on very large screens */
+            padding: 3rem;
+            transition: transform 0.3s ease;
+            margin: 0 auto;
+            /* Center horizontally */
+        }
+
+
+
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .nav-btn {
+            margin-top: 1rem;
+            background: linear-gradient(90deg, #6366f1, #9333ea);
+            padding: 0.8rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #4f46e5, #c026d3);
+        }
+
+        .shine {
+            background: linear-gradient(90deg, #fff, #999, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300%;
+            animation: shine 4s infinite linear;
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: -100%;
+            }
+
+            100% {
+                background-position: 100%;
+            }
+        }
+
+        /* Photo Styling Updated */
+        img.round {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            /* keeps full photo visible without cutting */
+            border-radius: 1.5rem;
+            border: 5px solid #8b5cf6;
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        img.round:hover {
+            transform: scale(1.05);
+        }
+
+        img.square {
+            width: 200px;
+            height: 240px;
+            object-fit: cover;
+            /* keeps full photo visible without cutting */
+            border-radius: 1.5rem;
+            border: 5px solid #8b5cf6;
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        img.square:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🎵 Background Music -->
+    <audio autoplay loop>
+        <source
+            src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_640a8d7d5d.mp3?filename=birthday-music-112199.mp3"
+            type="audio/mpeg">
+    </audio>
+
+    <!-- Radio Scene Controls -->
+    <input type="radio" id="r1" name="scene" checked>
+    <input type="radio" id="r2" name="scene">
+    <input type="radio" id="r3" name="scene">
+    <input type="radio" id="r4" name="scene">
+    <input type="radio" id="r5" name="scene">
+
+    <div class="container relative w-full h-screen flex items-center justify-center">
+
+        <!-- Intro -->
+        <div id="intro" class="scene card text-center">
+            <h1 class="text-5xl font-fancy text-purple-400 mb-4">Hey Akash 👋</h1>
+            <p class="text-xl max-w-2xl">
+                This little surprise is from your most irritating, torturing friend <br><span
+                    class="text-pink-400 font-bold">Aksh</span> 😉
+
+            </p>
+            <label for="r2" class="nav-btn">Peek Inside 👀 →</label>
+        </div>
+
+        <!-- Scene 1 -->
+        <div id="scene1" class="scene card">
+            <h2 class="text-4xl font-fancy text-indigo-400 mb-6">Why You’re Special 💖</h2>
+            <p class="text-xl max-w-2xl mb-6">
+                At first, you might seem a little rude or distant 😏<br>
+                …but the moment we talk,<br>
+                I start seeing your kindness, your respect, your warmth —<br>
+                all the things that make you truly special. 💖<br>
+                It’s crazy, isn’t it? Just in a month —<br>
+                and you already mean so much.<br>
+                I didn’t know you’d become <span class="text-yellow-400 font-semibold">so important</span> to me.<br>
+                I don’t easily get close to people,<br>
+                but with you… I didn’t even have to try.<br>
+                It just clicked. 💫<br>
+                You’re different, <span class="text-pink-400 font-semibold">Akash —</span><br>
+                not like everyone else I’ve known.<br>
+                You listen when no one does,<br>
+                you cheer me up without trying,<br>
+                and your presence feels like home after a long, tiring day.<br>
+            </p>
+            <label for="r3" class="nav-btn">Reveal More ❤️ →</label>
+        </div>
+
+        <!-- Scene 2 -->
+        <div id="scene2" class="scene card">
+            <h2 class="text-4xl font-fancy text-pink-400 mb-6">The Reason You’re Amazing 🌟</h2>
+            <img src="bff.jpg" alt="Akash" class="round mx-auto mb-6">
+            <p class="text-lg max-w-2xl">
+                Every chat, every small laugh, every random talk at midnight — it all became *our moments*.
+                You’re not “just” my best friend —<br>
+                you’re that safe corner where I can breathe and be myself.<br>
+                You’ve seen my serious side, my silly side,<br>
+                my random mood swings, and my nonsense talks 😄<br>
+                Still, you stay — and tolerate me like a pro! 😂<br>
+                Honestly, I don’t know how you do it —<br>
+                but I’m glad you do.<br>
+            </p>
+            <label for="r4" class="nav-btn">Keep Reading 💌 →</label>
+        </div>
+
+        <!-- Scene 3 -->
+        <div id="scene3" class="scene card">
+            <h2 class="text-4xl font-fancy text-cyan-400 mb-6">Why I Cherish You 💙🤝</h2>
+            <p class="text-lg max-w-2xl mb-6">
+                When I talk to you, I never feel bored.<br>
+                I just want to keep talking,<br>
+                sharing, laughing, and saying everything —<br>
+                as if time doesn’t exist, and it’s only us. 💌<br>
+                With you, I don’t need to pretend.<br>
+                You understand things I don’t even say aloud.<br>
+                You’re that person I can text or call without thinking twice —<br>
+                no filters, no fear, just pure comfort. 💖<br>
+                And yes, I admit… I get jealous 😅<br>
+                if you talk close or even mention some other girl.<br>
+                Because you’re not just my best friend —<br>
+                you’ve become my favourite human,<br>
+                my safe place, my secret keeper, my chaos, my comfort zone.<br>
+                <span class="text-pink-400 font-semibold">I know I’m not closer to you. Maybe for you, it seems to be
+                    overacting
+                    But for me?
+                    You’re my closest friend,</span><br>
+            </p>
+            <label for="r5" class="nav-btn">Finally.. It's your special day🎉</label>
+        </div>
+
+        <!-- Finale -->
+        <div id="finale" class="scene card">
+            <h2 class="text-5xl font-fancy text-yellow-300 mb-4">Happy Birthday Akash 🎂</h2>
+            <img src="friend-photo.jpg" alt="Akash" class="square mb-6">
+            <p class="text-xl max-w-2xl mb-6">
+                If I had to describe you in one word, it would be rare. 💎<br>
+                So yes… you’re my favourite,<br>
+                my secret keeper, my comfort zone,<br>
+                and the person I never want to lose — ever ❤️.<br>
+                You often say that as per your fate,<br>
+                everyone will lose your friendship one day…<br>
+                But I pray our bond stays exactly as it is now,<br>
+                no matter how time changes. 🙏💖<br>
+                With lots of love,<br>
+                <span class="text-pink-400 font-semibold text-2xl">your one of the life problem😅 Akshatha 💖</span>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- 🎉 Confetti Script -->
+    <script>
+        const finale = document.getElementById('r5');
+        let confettiDone = false;
+        finale.addEventListener('change', e => {
+            if (e.target.checked && !confettiDone) {
+                setTimeout(() => {
+                    fireConfetti();
+                    confettiDone = true;
+                }, 600);
+            }
+        });
+
+        function fireConfetti() {
+            confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+            setTimeout(() => {
+                confetti({ particleCount: 80, angle: 60, spread: 70, origin: { x: 0 } });
+                confetti({ particleCount: 80, angle: 120, spread: 70, origin: { x: 1 } });
+            }, 400);
+        }
+    </script>
+
+</body>
+
+</html>
